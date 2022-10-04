@@ -29,5 +29,9 @@ public class Movie {
     this.year = year;
 
     Movie.movies.add(this);
+    
+  }
+  public void displayInfo() {
+    System.out.println("Title of the movie: " + this.title +".Description"+ this.description +". The movie is created in" + this.year);
   }
 }

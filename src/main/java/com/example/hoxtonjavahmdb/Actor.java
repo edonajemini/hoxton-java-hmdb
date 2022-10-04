@@ -30,7 +30,6 @@ public class Actor {
     Actor.actors.add(this);
   }
   public void displayInfo() {
-    String message = "This is %s, who is %s year(s) old. %s %s cuddles!\n";
-    System.out.printf(message, this.firstName, this.lastName, this.yearOfBirth);
+    System.out.println("Name of the actor: " + this.firstName + this.lastName +". who is born in" + this.yearOfBirth);
   }
 }
