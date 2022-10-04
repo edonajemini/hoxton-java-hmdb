@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Actor {
  public static ArrayList<Actor> actors = new ArrayList<>();
-
+ 
   public Integer id;
   public String firstName;
   public String lastName;
@@ -28,5 +28,9 @@ public class Actor {
     this.yearOfBirth = yearOfBirth;
 
     Actor.actors.add(this);
+  }
+  public void displayInfo() {
+    String message = "This is %s, who is %s year(s) old. %s %s cuddles!\n";
+    System.out.printf(message, this.firstName, this.lastName, this.yearOfBirth);
   }
 }
