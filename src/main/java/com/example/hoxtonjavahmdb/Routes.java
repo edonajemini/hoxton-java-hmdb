@@ -12,8 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class Routes {
 
   @GetMapping("/actors")
-  public ArrayList<Actor> getAllActor() {
+  public ArrayList<Actor> getAllActors() {
     return Actor.actors;
+  }
+  @GetMapping("/movies")
+  public ArrayList<Movie> getAllMovies() {
+    return Movie.movies;
   }
 
   @GetMapping("/actor/{id}")
@@ -31,7 +35,21 @@ public class Routes {
 
     return match;
   }
+  @GetMapping("/movies/{id}")
+  public Movie getSingleMovie(@PathVariable Integer id) {
+    Movie match = null;
 
+    for (Movie movie : Movie.movies) {
+      if (movie.id == id) {
+        match = movie;
+      }
+    }
+
+    if (match == null)
+      throw new Error("Movie not found.");
+
+    return match;
+  }
   @PostMapping("/actors")
   public Actor createActor(@RequestBody Actor actor) {
     return actor;
