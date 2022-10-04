@@ -32,6 +32,6 @@ public class Movie {
     
   }
   public void displayInfo() {
-    System.out.println("Title of the movie: " + this.title +".Description"+ this.description +". The movie is created in" + this.year);
+    System.out.println("Title of the movie: " + this.title +".Description:"+ this.description +". The movie was made in" + this.year);
   }
 }
